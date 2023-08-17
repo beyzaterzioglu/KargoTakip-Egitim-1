@@ -1,0 +1,15 @@
+[
+  {
+    "outputFileName": "wwwroot/assets/js/head.min.js",
+    "inputFiles": [
+      "wwwroot/assets/lib/jquery/dist/jquery.min.js",
+      "wwwroot/assets/lib/bootstrap/dist/js/bootstrap.bundle.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/assets/js/site.js"
+    ]
+  }
+]
