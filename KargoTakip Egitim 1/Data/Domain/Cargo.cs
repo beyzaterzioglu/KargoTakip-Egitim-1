@@ -7,5 +7,7 @@
         public string? BuyerName { get; set; }
         public string? Address { get; set; }
 
+        public string? BuyerAddress { get; set; }
+
     }
 }

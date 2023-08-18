@@ -1,12 +1,9 @@
 ﻿@page
-@model KargoTakip_Egitim_1.Pages.DetailModel
+@model KargoTakip_Egitim_1.Pages.CreateModel
 @{
-	ViewData["Title"] = "Kargo Detay - " + Request.Query["id"];
 }
-
-
 <div class="py-5 text-center">
-	<p class="lead">Kargo işlemlerini düzenleyebileceğiniz sayfaya erişim sağladınız.İşlemlerinizi yapabilmek için butonları kullanabilirsiniz. </p>
+	<p class="lead">Bu sekmeden kargo detaylarını düzenleyebilirsiniz.</p>
 </div>
 
 
@@ -15,11 +12,9 @@
 	<form class="needs-validation" method="post" novalidate>
 		<div class="row g-3">
 			<div class="col-sm-6">
-				<div>
-					<input asp-for="@Model.Cargo.Id" type="text" class="form-control" id="id" value="@Model.Cargo.Id" hidden="true">
-				</div>
+				
 				<label for="firstName" class="form-label">Gönderici Adı</label>
-				<input type="text" class="form-control" id="firstName" placeholder="" value="@Model.Cargo.SenderName" required asp-for="@Model.Cargo.SenderName">
+				<input type="text" class="form-control" id="firstName" placeholder=""  required asp-for="@Model.Cargo.SenderName">
 				<div class="invalid-feedback">
 					Valid first name is required.
 				</div>
@@ -27,19 +22,21 @@
 
 			<div class="col-sm-6">
 				<label for="lastName" class="form-label">Alıcı Adı</label>
-				<input type="text" class="form-control" id="lastName" placeholder="" value="@Model.Cargo.BuyerName" required asp-for="@Model.Cargo.BuyerName">
+				<input type="text" class="form-control" id="lastName" placeholder=""  required asp-for="@Model.Cargo.BuyerName">
 				<div class="invalid-feedback">
 					Valid last name is required.
 				</div>
 			</div>
 
 			
+			
 			<div class="col-md-5">
 				<label for="country" class="form-label">Çıkış Şube</label>
 				<select class="form-select" id="country" required asp-for="@Model.Cargo.Address">
-					<option value="@Model.Cargo.Address">Seçiminiz..</option>
+					<option value="">Seçiminiz</option>
 					<option>İstanbul</option>
 					<option>Kırklareli</option>
+					<option>İstanbul</option>
 					<option>Bursa</option>
 					<option>Çanakkale</option>
 					<option>Balıkesir</option>
@@ -67,7 +64,8 @@
 			<div class="col-md-4">
 				<label for="state" class="form-label">Varış Şube</label>
 				<select class="form-select" id="state" required asp-for="@Model.Cargo.BuyerAddress">
-					<option value="@Model.Cargo.BuyerAddress">Seçiminiz..</option>
+					<option value="">Seçiminiz..</option>
+					
 					<option>Kırklareli</option>
 					<option>İstanbul</option>
 					<option>Bursa</option>
@@ -93,12 +91,12 @@
 				</div>
 			</div>
 
+			
 
-</div>
-<hr class="my-4">
+		</div>
+		<hr class="my-4">
 
-<button class="w-100 btn btn-primary btn-lg" type="submit">Kaydet</button>
+		<button class="w-100 btn btn-primary btn-lg" type="submit">Kaydet</button>
 
 	</form>
 </div>
-
